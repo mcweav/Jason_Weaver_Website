@@ -1,8 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
-import logo from "../../../public/images/logo/logo.svg";
+import { CONTACT } from "@/config/contact";
 import FooterLinkList from "./FooterLinkList";
-import { companiesLink, productsLink, supportsLink } from "./linksData";
+import { connectLinks, quickLinks } from "./linksData";
 
 const Footer = () => {
   return (
@@ -26,20 +25,22 @@ const Footer = () => {
 
           <div className="flex flex-wrap justify-between">
             <div className="mb-10 w-full max-w-[520px]">
-              <Link href="/" className="mb-8.5 inline-block">
-                <Image src={logo} alt="Logo" width={164} height={36} />
+              <Link
+                href="/"
+                className="mb-8.5 inline-block text-xl font-extrabold text-white"
+              >
+                Jason D. Weaver
               </Link>
 
               <p className="mb-12 xl:w-4/5">
-                Build SaaS AI applications using OpenAI and Next.js, this kit
-                comes with pre-configured and pre-built examples, making it
-                easier to quickly kickstart your AI startup.
+                UX &amp; Front-End Designer making the hard problems feel
+                effortless.
               </p>
 
               <div className="flex items-center gap-5">
                 <a
-                  href="#"
-                  aria-label="facebook"
+                  href={`mailto:${CONTACT.email}`}
+                  aria-label="email"
                   className="duration-300 ease-in hover:text-white"
                 >
                   <svg
@@ -51,15 +52,17 @@ const Footer = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M13 21.9506C18.0533 21.4489 22 17.1853 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 16.8379 5.43552 20.8734 10 21.8V16H7V13H10V9.79586C10 7.47449 11.9695 5.64064 14.285 5.80603L17 5.99996V8.99996H15C13.8954 8.99996 13 9.89539 13 11V13H17L16 16H13V21.9506Z"
+                      d="M13.9998 0.399994H1.9998C1.1498 0.399994 0.424805 1.09999 0.424805 1.97499V10.075C0.424805 10.925 1.1248 11.65 1.9998 11.65H13.9998C14.8498 11.65 15.5748 10.95 15.5748 10.075V1.94999C15.5748 1.09999 14.8498 0.399994 13.9998 0.399994ZM13.9998 1.52499C14.0248 1.52499 14.0498 1.52499 14.0748 1.52499L7.9998 5.42499L1.9248 1.52499C1.9498 1.52499 1.9748 1.52499 1.9998 1.52499H13.9998ZM13.9998 10.475H1.9998C1.7498 10.475 1.5498 10.275 1.5498 10.025V2.62499L7.3998 6.37499C7.5748 6.49999 7.7748 6.54999 7.9748 6.54999C8.1748 6.54999 8.3748 6.49999 8.5498 6.37499L14.3998 2.62499V10.05C14.4498 10.3 14.2498 10.475 13.9998 10.475Z"
                       fill=""
                     />
                   </svg>
                 </a>
 
                 <a
-                  href="#"
-                  aria-label="twitter"
+                  href={CONTACT.linkedInUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="linkedin"
                   className="duration-300 ease-in hover:text-white"
                 >
                   <svg
@@ -71,14 +74,16 @@ const Footer = () => {
                     xmlns="http://www.w3.org/2000/svg"
                   >
                     <path
-                      d="M7.6125 21.5251C16.4625 21.5251 21.2625 14.2126 21.2625 7.87509C21.2625 7.72509 21.2625 7.46259 21.225 7.23759C22.1625 6.56259 22.9875 5.70009 23.625 4.76259C22.725 5.17509 21.825 5.40009 20.8875 5.51259C21.9 4.91259 22.65 3.97509 22.9875 2.8501C22.05 3.3751 21.075 3.78759 19.9125 4.01259C19.0125 3.0751 17.8125 2.4751 16.425 2.4751C13.7625 2.4751 11.5875 4.65009 11.5875 7.31259C11.5875 7.68759 11.625 8.06259 11.7 8.43759C7.8375 8.17509 4.3125 6.26259 1.9125 3.3751C1.5 4.12509 1.275 4.91259 1.275 5.77509C1.275 7.46259 2.1375 8.88759 3.45 9.75009C2.6625 9.71259 1.9125 9.48759 1.275 9.15009C1.275 9.18759 1.275 9.18759 1.275 9.18759C1.275 11.4751 2.925 13.4626 5.1 13.9126C4.6875 14.0251 4.2375 14.0626 3.9 14.0626C3.6 14.0626 3.2625 14.0251 3 13.9501C3.6375 15.8626 5.4 17.2501 7.5 17.2876C5.85 18.5626 3.7875 19.3501 1.575 19.3501C1.125 19.4251 0.75 19.3501 0.375 19.3126C2.4 20.7376 4.9125 21.5251 7.6125 21.5251Z"
+                      d="M20.5 2h-17A1.5 1.5 0 0 0 2 3.5v17A1.5 1.5 0 0 0 3.5 22h17a1.5 1.5 0 0 0 1.5-1.5v-17A1.5 1.5 0 0 0 20.5 2ZM8 19H5V9h3ZM6.5 7.7A1.7 1.7 0 1 1 8.2 6a1.7 1.7 0 0 1-1.7 1.7ZM19 19h-3v-4.9c0-1.2-.4-2-1.5-2a1.6 1.6 0 0 0-1.5 1.1 2 2 0 0 0-.1.7V19h-3V9h3v1.3A3 3 0 0 1 15.6 9c2 0 3.4 1.3 3.4 4.1Z"
                       fill=""
                     />
                   </svg>
                 </a>
 
                 <a
-                  href="#"
+                  href={CONTACT.githubUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label="github"
                   className="duration-300 ease-in hover:text-white"
                 >
@@ -106,17 +111,16 @@ const Footer = () => {
               </div>
 
               <p className="mt-5.5 font-medium">
-                AI Tool, LLC. All rights reserved.
+                &copy; {new Date().getFullYear()} Jason D. Weaver. All rights
+                reserved.
               </p>
             </div>
 
-            <div className="w-full max-w-[571px]">
+            <div className="w-full max-w-[400px]">
               <div className="flex flex-col gap-10 sm:flex-row sm:justify-between">
-                <FooterLinkList title="Products" links={productsLink} />
+                <FooterLinkList title="Quick Links" links={quickLinks} />
 
-                <FooterLinkList title="Company" links={companiesLink} />
-
-                <FooterLinkList title="Support" links={supportsLink} />
+                <FooterLinkList title="Connect" links={connectLinks} />
               </div>
             </div>
           </div>

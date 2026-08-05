@@ -1,93 +1,50 @@
 import { FooterLink } from "@/types/footerLink";
+import { CONTACT } from "@/config/contact";
 
-export const productsLink: FooterLink[] = [
+export const quickLinks: FooterLink[] = [
   {
     id: 1,
-    title: "Features",
-    href: "#",
+    title: "About",
+    href: "/about",
     newTab: false,
   },
   {
     id: 2,
-    title: "Integrations",
-    href: "#",
+    title: "Resume",
+    href: "/resume",
     newTab: false,
   },
   {
     id: 3,
-    title: "Pricing",
-    href: "#",
+    title: "Projects",
+    href: "/#projects",
     newTab: false,
   },
   {
     id: 4,
-    title: "Changes log",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 5,
-    title: "Roadmap",
-    href: "#",
+    title: "Contact",
+    href: "/contact",
     newTab: false,
   },
 ];
 
-export const companiesLink: FooterLink[] = [
+export const connectLinks: FooterLink[] = [
   {
     id: 11,
-    title: "Privacy Policy",
-    href: "#",
+    title: "Email",
+    href: `mailto:${CONTACT.email}`,
     newTab: false,
   },
   {
     id: 12,
-    title: "Refund Policy",
-    href: "#",
-    newTab: false,
+    title: "LinkedIn",
+    href: CONTACT.linkedInUrl,
+    newTab: true,
   },
   {
     id: 13,
-    title: "Support",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 14,
-    title: "Community",
-    href: "#",
-    newTab: false,
-  },
-];
-export const supportsLink: FooterLink[] = [
-  {
-    id: 21,
-    title: "Features",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 32,
-    title: "Integrations",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 43,
-    title: "Pricing",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 54,
-    title: "Changes log",
-    href: "#",
-    newTab: false,
-  },
-  {
-    id: 65,
-    title: "Roadmap",
-    href: "#",
-    newTab: false,
+    title: "GitHub",
+    href: CONTACT.githubUrl,
+    newTab: true,
   },
 ];

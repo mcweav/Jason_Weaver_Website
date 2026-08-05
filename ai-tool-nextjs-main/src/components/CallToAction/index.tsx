@@ -52,22 +52,21 @@ const CallToAction = () => {
                 height={16}
               />
 
-              <span className="hero-subtitle-text">Try our tool for Free</span>
+              <span className="hero-subtitle-text">Let&apos;s connect</span>
             </span>
             <h2 className="mb-4.5 text-2xl font-extrabold text-white sm:text-4xl xl:text-heading-2">
-              What are you waiting for?
+              Have a project in mind?
             </h2>
             <p className="mx-auto mb-9 max-w-[714px] font-medium">
-              Build SaaS AI applications using OpenAI and Next.js, this kit
-              comes with pre-configured and pre-built examples, making it easier
-              to quickly kickstart your AI startup.
+              I&apos;m always open to talking through new opportunities,
+              collaborations, or just a good problem to solve.
             </p>
 
             <Link
-              href="/"
+              href="/contact"
               className="hero-button-gradient inline-flex rounded-lg px-7 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
             >
-              Get Started for Free
+              Get In Touch
             </Link>
           </div>
         </div>
