@@ -106,7 +106,7 @@ const ResumePage = () => {
       <section className="pb-20 lg:pb-25">
         <div className="mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0">
           {/* Header / quick facts */}
-          <div className="wow fadeInUp mb-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-black/10 bg-white p-7.5 shadow-sm">
+          <div className="wow fadeInUp mb-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-ink/10 bg-surface p-7.5 shadow-sm">
             <div>
               <h1 className="mb-2 text-2xl font-extrabold text-ink sm:text-3xl">
                 Jason D. Weaver
@@ -179,7 +179,7 @@ const ResumePage = () => {
               {competencies.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-black/10 bg-black/5 px-4 py-1.5 text-sm font-medium"
+                  className="rounded-full border border-ink/10 bg-ink/5 px-4 py-1.5 text-sm font-medium"
                 >
                   {item}
                 </span>
@@ -253,7 +253,7 @@ const ResumePage = () => {
               {certifications.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-black/10 bg-black/5 px-4 py-1.5 text-sm font-medium"
+                  className="rounded-full border border-ink/10 bg-ink/5 px-4 py-1.5 text-sm font-medium"
                 >
                   {item}
                 </span>

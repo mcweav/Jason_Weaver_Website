@@ -22,8 +22,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={plusJakarta.className}>
+    <html lang='en' className={plusJakarta.className} suppressHydrationWarning>
       <body>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
+          }}
+        />
         <div className='isolate'>
           <NextTopLoader
             color='#06b6d4'

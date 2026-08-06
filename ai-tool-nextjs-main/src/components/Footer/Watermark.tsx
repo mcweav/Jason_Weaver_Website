@@ -50,8 +50,8 @@ const Watermark = () => {
           y="240"
           textAnchor="middle"
           fontSize="200"
-          className="font-[family-name:var(--font-dm-sans)] font-bold"
-          style={{ letterSpacing: "-0.03em", fill: "rgba(0,0,0,0.04)" }}
+          className="fill-ink/[0.04] font-[family-name:var(--font-dm-sans)] font-bold"
+          style={{ letterSpacing: "-0.03em" }}
         >
           Jason Weaver
         </text>

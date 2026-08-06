@@ -246,9 +246,9 @@ const GlowingOrbitPath = memo(
   ({ radius, glowColor = "cyan", animationDelay = 0 }: GlowingOrbitPathProps) => {
     const glowColors = {
       cyan: {
-        primary: "rgba(22, 22, 22, 0.25)",
-        secondary: "rgba(22, 22, 22, 0.12)",
-        border: "rgba(22, 22, 22, 0.2)",
+        primary: "rgba(140, 140, 145, 0.3)",
+        secondary: "rgba(140, 140, 145, 0.15)",
+        border: "rgba(140, 140, 145, 0.25)",
       },
       purple: {
         primary: "rgba(176, 141, 62, 0.45)",
@@ -331,7 +331,7 @@ export default function OrbitingSkills() {
       >
         {/* Central icon with glow */}
         <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl">
-          <div className="absolute inset-0 animate-pulse rounded-full bg-black/25 blur-xl"></div>
+          <div className="absolute inset-0 animate-pulse rounded-full bg-gray-500/30 blur-xl"></div>
           <div
             className="absolute inset-0 animate-pulse rounded-full bg-[#b08d3e]/30 blur-2xl"
             style={{ animationDelay: "1s" }}

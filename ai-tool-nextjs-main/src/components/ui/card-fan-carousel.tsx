@@ -62,7 +62,7 @@ function getSlotConfig(totalCards: number, slot: number) {
 }
 
 const ARROW_CLASSES =
-  "relative flex items-center justify-center rounded-full border-[1.5px] border-black/10 bg-white text-black/55 cursor-pointer shrink-0 z-30 outline-none shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:border-black/25 hover:text-black/80 active:opacity-70 transition-colors duration-300";
+  "relative flex items-center justify-center rounded-full border-[1.5px] border-ink/10 bg-surface text-ink/55 cursor-pointer shrink-0 z-30 outline-none shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:border-ink/25 hover:text-ink/80 active:opacity-70 transition-colors duration-300";
 
 export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -343,7 +343,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
         >
           {cards.map((card, index) => {
             const image = (
-              <div className="relative h-full w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+              <div className="relative h-full w-full overflow-hidden rounded-2xl border border-ink/10 shadow-2xl">
                 <img
                   src={card.imgUrl}
                   loading="lazy"
@@ -387,7 +387,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
               <span
                 key={i}
                 className={`h-2 w-2 rounded-full transition-all duration-300 ${
-                  i === centerIndex ? "scale-[1.3] bg-black/70" : "bg-black/15"
+                  i === centerIndex ? "scale-[1.3] bg-ink/70" : "bg-ink/15"
                 }`}
               />
             ))}

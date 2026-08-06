@@ -36,6 +36,24 @@ const projectsData: Project[] = [
     imgUrl:
       "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=875&fit=crop&q=80",
   },
+  {
+    id: 4,
+    title: "Project Four",
+    description: "Add a short description of this project here.",
+    tags: ["HTML5", "CSS3"],
+    link: "#",
+    imgUrl:
+      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=875&fit=crop&q=80",
+  },
+  {
+    id: 5,
+    title: "Project Five",
+    description: "Add a short description of this project here.",
+    tags: ["JavaScript", "Automation"],
+    link: "#",
+    imgUrl:
+      "https://images.unsplash.com/photo-1550439062-609e1531270e?w=500&h=875&fit=crop&q=80",
+  },
 ];
 
 export default projectsData;

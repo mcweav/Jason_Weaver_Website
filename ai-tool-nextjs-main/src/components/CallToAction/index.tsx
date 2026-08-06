@@ -5,7 +5,7 @@ const CallToAction = () => {
   return (
     <section>
       <div className="mx-auto max-w-[1170px] px-4 sm:px-8 xl:px-0">
-        <div className="cta-box-gradient relative z-999 overflow-hidden rounded-[30px] bg-white px-4 py-20 shadow-sm lg:py-25">
+        <div className="cta-box-gradient relative z-999 overflow-hidden rounded-[30px] bg-surface px-4 py-20 shadow-sm lg:py-25">
           <div className="wow fadeInUp text-center">
             <span className="hero-subtitle-gradient relative mb-4 inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium">
               <Image

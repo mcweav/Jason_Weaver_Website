@@ -40,7 +40,7 @@ const Skills = () => {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
+              className="rounded-2xl border border-ink/10 bg-surface p-6 shadow-sm"
             >
               <h3 className="mb-4 text-lg font-semibold text-ink">
                 {group.title}

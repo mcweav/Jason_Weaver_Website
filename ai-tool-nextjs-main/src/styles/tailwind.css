@@ -1,5 +1,6 @@
 @import 'tailwindcss';
 @plugin "@tailwindcss/typography";
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --font-*: initial;
@@ -44,6 +45,7 @@
   --color-pink-light-4: #fcf1fe;
 
   --color-canvas: #f0f0f2;
+  --color-surface: #ffffff;
   --color-ink: #161616;
   --color-ink-2: #5a5a62;
   --color-gold: #b08d3e;
@@ -85,6 +87,20 @@
   --shadow-video:
     0px -3px 10px 0px rgba(0, 0, 0, 0.25) inset,
     0px 26px 50px 0px rgba(18, 9, 36, 0.1);
+}
+
+/*
+  Dark mode is an inversion of the same light-mode tokens, toggled by
+  adding/removing `.dark` on <html> (see ThemeToggle). Because every
+  themed utility (bg-canvas, text-ink, bg-surface, border-ink/10, etc.)
+  is generated from these custom properties, overriding them here is
+  enough to flip the whole site without touching each component.
+*/
+.dark {
+  --color-canvas: #111113;
+  --color-surface: #1c1c1f;
+  --color-ink: #f2f2f4;
+  --color-ink-2: #a3a3ab;
 }
 
 @utility container {
@@ -251,22 +267,25 @@
 
 @utility hero-button-gradient {
   background: var(--color-ink);
-  color: #ffffff;
-  transition: background-color 0.25s ease;
+  color: var(--color-canvas);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
   &:hover {
     background: var(--color-gold);
+    color: #ffffff;
   }
 }
 
 @utility hero-subtitle-gradient {
-  background: rgba(0, 0, 0, 0.03);
+  background: color-mix(in srgb, var(--color-ink) 4%, transparent);
   transition: 0.45s cubic-bezier(0.6, 0.6, 0, 1) box-shadow;
   &:before {
     @apply gradient-border;
     background: linear-gradient(
       180deg,
-      rgba(0, 0, 0, 0.12) 0%,
-      rgba(0, 0, 0, 0) 100%
+      color-mix(in srgb, var(--color-ink) 14%, transparent) 0%,
+      transparent 100%
     );
   }
 }
@@ -323,8 +342,8 @@
 }
 
 @utility nav-gradient {
-  background-color: rgba(0, 0, 0, 0.04);
-  border: 1px solid rgba(0, 0, 0, 0.06);
+  background-color: color-mix(in srgb, var(--color-ink) 5%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink) 7%, transparent);
   border-radius: 50px;
 }
 
@@ -475,8 +494,8 @@
     @apply gradient-border;
     background: linear-gradient(
       0deg,
-      rgba(0, 0, 0, 0.12) 0%,
-      rgba(0, 0, 0, 0) 100%
+      color-mix(in srgb, var(--color-ink) 12%, transparent) 0%,
+      transparent 100%
     );
   }
 }
@@ -493,17 +512,17 @@
 @utility footer-bg-gradient {
   background: linear-gradient(
     0deg,
-    rgba(0, 0, 0, 0.08) 0%,
-    rgba(0, 0, 0, 0) 100%
+    color-mix(in srgb, var(--color-ink) 8%, transparent) 0%,
+    transparent 100%
   );
 }
 
 @utility about-divider-gradient {
   background: linear-gradient(
     270deg,
-    rgba(0, 0, 0, 0) 0%,
-    rgba(0, 0, 0, 0.1) 49.48%,
-    rgba(0, 0, 0, 0) 100%
+    transparent 0%,
+    color-mix(in srgb, var(--color-ink) 10%, transparent) 49.48%,
+    transparent 100%
   );
 }
 

@@ -54,7 +54,7 @@ const Contact = () => {
   return (
     <section className="pb-17.5 pt-17.5 lg:pb-22.5 xl:pb-27.5">
       <div className="mx-auto max-w-[770px] px-4 sm:px-8 xl:px-0">
-        <div className="wow fadeInUp rounded-3xl border border-black/10 bg-white p-8 shadow-sm sm:p-12">
+        <div className="wow fadeInUp rounded-3xl border border-ink/10 bg-surface p-8 shadow-sm sm:p-12">
           <p className="mb-8 text-center font-medium">
             Prefer email? Reach me directly at{" "}
             <a
@@ -82,7 +82,7 @@ const Contact = () => {
               placeholder="Your name"
               value={formData.name}
               onChange={handleChange}
-              className="w-full rounded-lg border border-black/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
+              className="w-full rounded-lg border border-ink/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
             />
             <input
               type="email"
@@ -90,7 +90,7 @@ const Contact = () => {
               placeholder="Your email"
               value={formData.email}
               onChange={handleChange}
-              className="w-full rounded-lg border border-black/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
+              className="w-full rounded-lg border border-ink/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
             />
             <textarea
               name="message"
@@ -98,7 +98,7 @@ const Contact = () => {
               rows={5}
               value={formData.message}
               onChange={handleChange}
-              className="w-full rounded-lg border border-black/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
+              className="w-full rounded-lg border border-ink/15 bg-transparent px-6 py-3.5 font-medium text-ink outline-hidden focus:border-gold focus-visible:shadow-none"
             />
 
             <button

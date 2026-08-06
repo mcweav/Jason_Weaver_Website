@@ -122,7 +122,7 @@ const Footer = () => {
         </div>
 
         {/* Right card: nav columns */}
-        <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] bg-white p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sm:p-10">
+        <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] bg-surface p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sm:p-10">
           {/* Floating badge */}
           <div className="absolute -top-9 right-6 z-10 flex flex-col items-start gap-1.5 sm:right-10">
             <div
@@ -145,7 +145,7 @@ const Footer = () => {
               <svg
                 viewBox="0 0 24 24"
                 xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-gray-400"
+                className="h-5 w-5 text-ink-2"
               >
                 <path
                   d="M3 20 C 6 14, 10 9, 18 5"
@@ -173,7 +173,7 @@ const Footer = () => {
                 />
               </svg>
               <span
-                className={`${caveat.variable} font-[family-name:var(--font-caveat)] whitespace-nowrap text-[20px] font-semibold text-gray-400`}
+                className={`${caveat.variable} font-[family-name:var(--font-caveat)] whitespace-nowrap text-[20px] font-semibold text-ink-2`}
               >
                 Let&apos;s talk!
               </span>
@@ -183,7 +183,7 @@ const Footer = () => {
           <div className="flex gap-14 pt-2 sm:gap-18">
             <div>
               <h4
-                className={`${caveat.variable} font-[family-name:var(--font-caveat)] mb-4.5 text-2xl font-semibold text-gray-400 italic`}
+                className={`${caveat.variable} font-[family-name:var(--font-caveat)] mb-4.5 text-2xl font-semibold text-ink-2 italic`}
               >
                 Navigation
               </h4>
@@ -199,7 +199,7 @@ const Footer = () => {
             </div>
             <div>
               <h4
-                className={`${caveat.variable} font-[family-name:var(--font-caveat)] mb-4.5 text-2xl font-semibold text-gray-400 italic`}
+                className={`${caveat.variable} font-[family-name:var(--font-caveat)] mb-4.5 text-2xl font-semibold text-ink-2 italic`}
               >
                 Connect
               </h4>
@@ -221,7 +221,7 @@ const Footer = () => {
 
       {/* Full-width centered CTA + copyright */}
       <div className="mx-auto mt-14 max-w-[700px] px-4 text-center sm:px-8 xl:px-0">
-        <h4 className="mb-3.5 text-[15px] leading-[1.45] text-gray-500">
+        <h4 className="mb-3.5 text-[15px] leading-[1.45] text-ink-2">
           Have an idea?
           <br />
           <strong className="text-[19px] font-bold text-ink">
@@ -235,7 +235,7 @@ const Footer = () => {
           Get In Touch
         </Link>
 
-        <p className="mt-10 text-[12.5px] font-medium text-gray-400">
+        <p className="mt-10 text-[12.5px] font-medium text-ink-2">
           &copy; {new Date().getFullYear()} Jason D. Weaver. All rights
           reserved.
         </p>

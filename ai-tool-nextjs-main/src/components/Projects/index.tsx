@@ -36,7 +36,7 @@ const Projects = () => {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium"
+                  className="rounded-full border border-ink/10 bg-ink/5 px-3 py-1 text-xs font-medium"
                 >
                   {tag}
                 </span>
