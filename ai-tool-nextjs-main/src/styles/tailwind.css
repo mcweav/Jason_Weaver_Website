@@ -44,10 +44,10 @@
   --color-pink-light-3: #f6d8fe;
   --color-pink-light-4: #fcf1fe;
 
-  --color-canvas: #f0f0f2;
-  --color-surface: #ffffff;
-  --color-ink: #161616;
-  --color-ink-2: #5a5a62;
+  --color-canvas: #111113;
+  --color-surface: #1c1c1f;
+  --color-ink: #f2f2f4;
+  --color-ink-2: #a3a3ab;
   --color-gold: #b08d3e;
 
   --text-heading-1: 60px;
@@ -87,20 +87,6 @@
   --shadow-video:
     0px -3px 10px 0px rgba(0, 0, 0, 0.25) inset,
     0px 26px 50px 0px rgba(18, 9, 36, 0.1);
-}
-
-/*
-  Dark mode is an inversion of the same light-mode tokens, toggled by
-  adding/removing `.dark` on <html> (see ThemeToggle). Because every
-  themed utility (bg-canvas, text-ink, bg-surface, border-ink/10, etc.)
-  is generated from these custom properties, overriding them here is
-  enough to flip the whole site without touching each component.
-*/
-.dark {
-  --color-canvas: #111113;
-  --color-surface: #1c1c1f;
-  --color-ink: #f2f2f4;
-  --color-ink-2: #a3a3ab;
 }
 
 @utility container {

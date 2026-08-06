@@ -29,6 +29,9 @@ const connectLinks = [
   { title: "GitHub", href: CONTACT.githubUrl, external: true },
 ];
 
+const FOOTER_VIDEO_SRC =
+  "https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260411_104032_69319010-2458-492b-b04d-b40a5dfa4482.mp4";
+
 const socialIcons = [
   {
     label: "Email",
@@ -56,8 +59,21 @@ const socialIcons = [
 const Footer = () => {
   return (
     <footer
-      className={`${dmSans.variable} ${caveat.variable} relative z-10 bg-canvas pt-17.5 pb-10 font-[family-name:var(--font-dm-sans)]`}
+      className={`${dmSans.variable} ${caveat.variable} relative z-10 overflow-hidden bg-canvas pt-17.5 pb-10 font-[family-name:var(--font-dm-sans)]`}
     >
+      {/* <!-- Background Video, faded in at the top so it blends with the section above --> */}
+      <div className="pointer-events-none absolute inset-0 -z-20 [mask-image:linear-gradient(to_bottom,transparent,black_12%)] [-webkit-mask-image:linear-gradient(to_bottom,transparent,black_12%)]">
+        <video
+          className="absolute inset-0 h-full w-full object-cover"
+          src={FOOTER_VIDEO_SRC}
+          autoPlay
+          loop
+          muted
+          playsInline
+          preload="auto"
+        />
+      </div>
+
       <div className="mx-auto grid max-w-[1150px] grid-cols-1 gap-4 px-4 sm:px-8 min-[860px]:grid-cols-[350px_1fr] xl:px-0">
         {/* Left card: video + logo + tagline + socials */}
         <div className="relative flex min-h-[340px] flex-col justify-between overflow-hidden rounded-[28px] bg-ink p-8 shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
@@ -106,7 +122,7 @@ const Footer = () => {
                   target={social.external ? "_blank" : undefined}
                   rel={social.external ? "noopener noreferrer" : undefined}
                   aria-label={social.label}
-                  className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-[#0e1014] text-white shadow-[0_6px_18px_rgba(0,0,0,0.35),0_2px_6px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-black"
+                  className="flex h-9 w-9 items-center justify-center rounded-[9px] bg-[#0e1014] text-white shadow-[0_6px_18px_rgba(0,0,0,0.35),0_2px_6px_rgba(0,0,0,0.2)] transition-all duration-200 hover:-translate-y-0.5 hover:bg-gold"
                 >
                   <svg
                     className="h-3.75 w-3.75 fill-current"
@@ -122,16 +138,16 @@ const Footer = () => {
         </div>
 
         {/* Right card: nav columns */}
-        <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] bg-surface p-8 shadow-[0_4px_20px_rgba(0,0,0,0.04)] sm:p-10">
+        <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] p-8 sm:p-10">
           {/* Floating badge */}
           <div className="absolute -top-9 right-6 z-10 flex flex-col items-start gap-1.5 sm:right-10">
             <div
               className="flex h-18 w-18 -rotate-6 items-center justify-center rounded-[22px] sm:h-24 sm:w-24"
               style={{
                 background:
-                  "linear-gradient(135deg, #d9bb78 0%, #b08d3e 55%, #8a6d1f 100%)",
+                  "linear-gradient(135deg, #7db6f2 0%, #3b7fd6 55%, #1e4f9c 100%)",
                 boxShadow:
-                  "inset 3px 3px 8px rgba(255,255,255,0.35), inset -3px -3px 12px rgba(0,0,0,0.18), 8px 14px 28px rgba(138,109,31,0.35)",
+                  "inset 3px 3px 8px rgba(255,255,255,0.35), inset -3px -3px 12px rgba(0,0,0,0.18), 8px 14px 28px rgba(30,79,156,0.35)",
               }}
             >
               <span

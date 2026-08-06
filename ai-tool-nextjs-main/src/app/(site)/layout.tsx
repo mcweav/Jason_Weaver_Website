@@ -3,6 +3,7 @@ import '@/styles/prism-vsc-dark-plus.css';
 import '@/styles/star.css';
 import '@/styles/tailwind.css';
 
+import ChatBot from '@/components/ChatBot';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -22,13 +23,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang='en' className={plusJakarta.className} suppressHydrationWarning>
+    <html lang='en' className={plusJakarta.className}>
       <body>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');}}catch(e){}})();`,
-          }}
-        />
         <div className='isolate'>
           <NextTopLoader
             color='#06b6d4'
@@ -47,6 +43,7 @@ export default function RootLayout({
         </div>
 
         <ScrollToTop />
+        <ChatBot />
       </body>
     </html>
   );

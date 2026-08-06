@@ -62,7 +62,7 @@ function getSlotConfig(totalCards: number, slot: number) {
 }
 
 const ARROW_CLASSES =
-  "relative flex items-center justify-center rounded-full border-[1.5px] border-ink/10 bg-surface text-ink/55 cursor-pointer shrink-0 z-30 outline-none shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:border-ink/25 hover:text-ink/80 active:opacity-70 transition-colors duration-300";
+  "relative flex items-center justify-center rounded-full border-[1.5px] border-ink/10 bg-surface text-ink/55 cursor-pointer shrink-0 z-30 outline-none shadow-[0_4px_20px_rgba(0,0,0,0.12)] hover:border-gold/40 hover:text-gold active:opacity-70 transition-colors duration-300";
 
 export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
   const containerRef = useRef<HTMLDivElement>(null);

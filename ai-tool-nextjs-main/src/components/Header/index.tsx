@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import DropDown from "./DropDown";
 import menuData from "./menuData";
-import ThemeToggle from "@/components/ThemeToggle";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
@@ -127,10 +126,9 @@ const Header = () => {
             </nav>
 
             <div className="mt-7 flex items-center gap-6 lg:mt-0">
-              <ThemeToggle />
               <Link
                 href="/resume"
-                className="text-sm text-ink hover:text-opacity-75"
+                className="text-sm text-ink transition-colors duration-200 hover:text-gold"
               >
                 View Resume
               </Link>
