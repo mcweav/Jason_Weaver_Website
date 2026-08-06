@@ -11,11 +11,16 @@ import { Plus_Jakarta_Sans } from 'next/font/google';
 import NextTopLoader from 'nextjs-toploader';
 import AuthProvider from '../context/AuthContext';
 import ToasterContext from '../context/ToastContext';
+import { Metadata } from 'next';
 
 const plusJakarta = Plus_Jakarta_Sans({
   subsets: ['latin'],
   display: 'swap',
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(process.env.SITE_URL || 'https://jasonweaver.dev'),
+};
 
 export default function RootLayout({
   children,
