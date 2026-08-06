@@ -235,23 +235,9 @@ const Footer = () => {
         </div>
       </div>
 
-      {/* Full-width centered CTA + copyright */}
+      {/* Copyright */}
       <div className="mx-auto mt-14 max-w-[700px] px-4 text-center sm:px-8 xl:px-0">
-        <h4 className="mb-3.5 text-[15px] leading-[1.45] text-ink-2">
-          Have an idea?
-          <br />
-          <strong className="text-[19px] font-bold text-ink">
-            Let&apos;s build something great.
-          </strong>
-        </h4>
-        <Link
-          href="/contact"
-          className="hero-button-gradient inline-flex rounded-lg px-7 py-3 text-sm font-semibold duration-300 ease-in"
-        >
-          Get In Touch
-        </Link>
-
-        <p className="mt-10 text-[12.5px] font-medium text-ink-2">
+        <p className="text-[12.5px] font-medium text-ink-2">
           &copy; {new Date().getFullYear()} Jason D. Weaver. All rights
           reserved.
         </p>
