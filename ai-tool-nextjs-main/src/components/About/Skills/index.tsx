@@ -40,9 +40,9 @@ const Skills = () => {
           {skillGroups.map((group) => (
             <div
               key={group.title}
-              className="rounded-2xl border border-white/10 bg-white/5 p-6"
+              className="rounded-2xl border border-black/10 bg-white p-6 shadow-sm"
             >
-              <h3 className="mb-4 text-lg font-semibold text-white">
+              <h3 className="mb-4 text-lg font-semibold text-ink">
                 {group.title}
               </h3>
               <ul className="flex flex-col gap-2">

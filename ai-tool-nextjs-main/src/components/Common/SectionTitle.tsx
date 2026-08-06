@@ -21,7 +21,7 @@ const SectionTitle = ({
 
         <span className="hero-subtitle-text"> {subTitle} </span>
       </span>
-      <h2 className="mb-4.5 text-2xl font-extrabold text-white sm:text-4xl xl:text-heading-2">
+      <h2 className="mb-4.5 text-2xl font-extrabold text-ink sm:text-4xl xl:text-heading-2">
         {title}
       </h2>
       <p className="mx-auto max-w-[714px] font-medium">{paragraph}</p>

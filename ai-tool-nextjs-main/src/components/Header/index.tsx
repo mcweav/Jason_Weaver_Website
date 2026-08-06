@@ -32,13 +32,13 @@ const Header = () => {
       <header
         className={`fixed left-0 top-0 z-1000 w-full ${
           stickyMenu
-            ? "before:features-row-border bg-dark/70 py-4! shadow-sm backdrop-blur-lg transition duration-100 before:absolute before:bottom-0 before:left-0 before:h-[1px] before:w-full lg:py-0!"
+            ? "border-b border-black/8 bg-canvas/85 py-4! shadow-sm backdrop-blur-lg transition duration-100 lg:py-0!"
             : "py-7 lg:py-0"
         }`}
       >
         <div className="relative mx-auto max-w-[1170px] items-center justify-between px-4 sm:px-8 lg:flex xl:px-0">
           <div className="flex w-full items-center justify-between lg:w-1/4">
-            <Link href="/" className="text-lg font-extrabold text-white">
+            <Link href="/" className="text-lg font-extrabold text-ink">
               Jason D. Weaver
             </Link>
 
@@ -49,29 +49,29 @@ const Header = () => {
               <span className="relative block h-5.5 w-5.5 cursor-pointer">
                 <span className="du-block absolute right-0 h-full w-full">
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-0 duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-ink delay-0 duration-200 ease-in-out ${
                       !navigationOpen ? "w-full! delay-300" : "w-0"
                     }`}
                   ></span>
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-150 duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-ink delay-150 duration-200 ease-in-out ${
                       !navigationOpen ? "delay-400 w-full!" : "w-0"
                     }`}
                   ></span>
                   <span
-                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-white delay-200 duration-200 ease-in-out ${
+                    className={`relative left-0 top-0 my-1 block h-0.5 rounded-sm bg-ink delay-200 duration-200 ease-in-out ${
                       !navigationOpen ? "w-full! delay-500" : "w-0"
                     }`}
                   ></span>
                 </span>
                 <span className="du-block absolute right-0 h-full w-full rotate-45">
                   <span
-                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-white delay-300 duration-200 ease-in-out ${
+                    className={`absolute left-2.5 top-0 block h-full w-0.5 rounded-sm bg-ink delay-300 duration-200 ease-in-out ${
                       !navigationOpen ? "h-0! delay-0" : "h-full"
                     }`}
                   ></span>
                   <span
-                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-white duration-200 ease-in-out ${
+                    className={`delay-400 absolute left-0 top-2.5 block h-0.5 w-full rounded-sm bg-ink duration-200 ease-in-out ${
                       !navigationOpen ? "h-0! delay-200" : "h-0.5"
                     }`}
                   ></span>
@@ -83,7 +83,7 @@ const Header = () => {
           <div
             className={`invisible h-0 w-full items-center justify-between lg:visible lg:flex lg:h-auto lg:w-3/4 ${
               navigationOpen
-                ? "visible! relative mt-4 h-auto! max-h-[400px] overflow-y-scroll rounded-md bg-dark p-7.5 shadow-lg"
+                ? "visible! relative mt-4 h-auto! max-h-[400px] overflow-y-scroll rounded-md bg-white p-7.5 shadow-lg"
                 : ""
             }`}
           >
@@ -103,10 +103,10 @@ const Header = () => {
                     ) : (
                       <Link
                         href={`${menuItem.path}`}
-                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-white ${
+                        className={`hover:nav-gradient relative border border-transparent px-4 py-1.5 text-sm hover:text-ink ${
                           pathUrl === menuItem.path
-                            ? "nav-gradient text-white"
-                            : "text-white/80"
+                            ? "nav-gradient text-ink"
+                            : "text-ink-2"
                         }`}
                       >
                         {menuItem.title}
@@ -124,7 +124,7 @@ const Header = () => {
                   <button
                     aria-label="Sign Out button"
                     onClick={() => signOut()}
-                    className="text-sm text-white hover:text-opacity-75"
+                    className="text-sm text-ink hover:text-opacity-75"
                   >
                     Sign Out
                   </button>
@@ -133,13 +133,13 @@ const Header = () => {
                 <>
                   <Link
                     href="/auth/signin"
-                    className="text-sm text-white hover:text-opacity-75"
+                    className="text-sm text-ink hover:text-opacity-75"
                   >
                     Sign In
                   </Link>
                   <Link
                     href="/auth/signup"
-                    className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm text-white shadow-button hover:shadow-none"
+                    className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm"
                   >
                     Sign up
                     <svg
@@ -152,7 +152,7 @@ const Header = () => {
                     >
                       <path
                         d="M14.4002 7.60002L9.2252 2.35002C9.0002 2.12502 8.6502 2.12502 8.4252 2.35002C8.2002 2.57502 8.2002 2.92502 8.4252 3.15002L12.6252 7.42502H2.0002C1.7002 7.42502 1.4502 7.67502 1.4502 7.97502C1.4502 8.27502 1.7002 8.55003 2.0002 8.55003H12.6752L8.4252 12.875C8.2002 13.1 8.2002 13.45 8.4252 13.675C8.5252 13.775 8.6752 13.825 8.8252 13.825C8.9752 13.825 9.1252 13.775 9.2252 13.65L14.4002 8.40002C14.6252 8.17502 14.6252 7.82503 14.4002 7.60002Z"
-                        fill="white"
+                        fill="currentColor"
                       />
                     </svg>
                   </Link>

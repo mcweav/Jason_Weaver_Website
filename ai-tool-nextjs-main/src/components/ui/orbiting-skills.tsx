@@ -246,14 +246,14 @@ const GlowingOrbitPath = memo(
   ({ radius, glowColor = "cyan", animationDelay = 0 }: GlowingOrbitPathProps) => {
     const glowColors = {
       cyan: {
-        primary: "rgba(6, 182, 212, 0.4)",
-        secondary: "rgba(6, 182, 212, 0.2)",
-        border: "rgba(6, 182, 212, 0.3)",
+        primary: "rgba(22, 22, 22, 0.25)",
+        secondary: "rgba(22, 22, 22, 0.12)",
+        border: "rgba(22, 22, 22, 0.2)",
       },
       purple: {
-        primary: "rgba(147, 51, 234, 0.4)",
-        secondary: "rgba(147, 51, 234, 0.2)",
-        border: "rgba(147, 51, 234, 0.3)",
+        primary: "rgba(176, 141, 62, 0.45)",
+        secondary: "rgba(176, 141, 62, 0.22)",
+        border: "rgba(176, 141, 62, 0.35)",
       },
     };
 
@@ -331,9 +331,9 @@ export default function OrbitingSkills() {
       >
         {/* Central icon with glow */}
         <div className="relative z-10 flex h-20 w-20 items-center justify-center rounded-full bg-gradient-to-br from-gray-700 to-gray-900 shadow-2xl">
-          <div className="absolute inset-0 animate-pulse rounded-full bg-cyan-500/30 blur-xl"></div>
+          <div className="absolute inset-0 animate-pulse rounded-full bg-black/25 blur-xl"></div>
           <div
-            className="absolute inset-0 animate-pulse rounded-full bg-purple-500/20 blur-2xl"
+            className="absolute inset-0 animate-pulse rounded-full bg-[#b08d3e]/30 blur-2xl"
             style={{ animationDelay: "1s" }}
           ></div>
           <div className="relative z-10">
@@ -356,8 +356,8 @@ export default function OrbitingSkills() {
                   x2="100%"
                   y2="100%"
                 >
-                  <stop offset="0%" stopColor="#06B6D4" />
-                  <stop offset="100%" stopColor="#9333EA" />
+                  <stop offset="0%" stopColor="#f5f5f5" />
+                  <stop offset="100%" stopColor="#b08d3e" />
                 </linearGradient>
               </defs>
               <polyline points="16 18 22 12 16 6"></polyline>

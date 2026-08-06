@@ -27,7 +27,7 @@ const Projects = () => {
       <div className="mx-auto mt-10 grid max-w-[1170px] grid-cols-1 gap-7.5 px-4 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:px-0">
         {projectsData.map((project) => (
           <div key={project.id}>
-            <h3 className="mb-2 text-lg font-semibold text-white">
+            <h3 className="mb-2 text-lg font-semibold text-ink">
               {project.title}
             </h3>
             <p className="mb-4 font-medium">{project.description}</p>
@@ -36,7 +36,7 @@ const Projects = () => {
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium"
+                  className="rounded-full border border-black/10 bg-black/5 px-3 py-1 text-xs font-medium"
                 >
                   {tag}
                 </span>

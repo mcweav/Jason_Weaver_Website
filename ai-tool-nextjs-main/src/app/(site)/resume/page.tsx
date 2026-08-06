@@ -93,7 +93,7 @@ const certifications = [
 ];
 
 const SectionHeading = ({ children }: { children: React.ReactNode }) => (
-  <h2 className="mb-5 text-xl font-extrabold text-white sm:text-2xl">
+  <h2 className="mb-5 text-xl font-extrabold text-ink sm:text-2xl">
     {children}
   </h2>
 );
@@ -106,9 +106,9 @@ const ResumePage = () => {
       <section className="pb-20 lg:pb-25">
         <div className="mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0">
           {/* Header / quick facts */}
-          <div className="wow fadeInUp mb-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-white/10 bg-white/5 p-7.5">
+          <div className="wow fadeInUp mb-14 flex flex-wrap items-center justify-between gap-6 rounded-2xl border border-black/10 bg-white p-7.5 shadow-sm">
             <div>
-              <h1 className="mb-2 text-2xl font-extrabold text-white sm:text-3xl">
+              <h1 className="mb-2 text-2xl font-extrabold text-ink sm:text-3xl">
                 Jason D. Weaver
               </h1>
               <p className="font-medium">
@@ -118,7 +118,7 @@ const ResumePage = () => {
               <div className="mt-4 flex flex-wrap gap-4 text-sm">
                 <a
                   href={`mailto:${CONTACT.email}`}
-                  className="hero-subtitle-text font-medium hover:text-white"
+                  className="hero-subtitle-text font-medium hover:text-ink"
                 >
                   {CONTACT.email}
                 </a>
@@ -126,7 +126,7 @@ const ResumePage = () => {
                   href={CONTACT.linkedInUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="hero-subtitle-text font-medium hover:text-white"
+                  className="hero-subtitle-text font-medium hover:text-ink"
                 >
                   LinkedIn
                 </a>
@@ -136,7 +136,7 @@ const ResumePage = () => {
             <a
               href={CONTACT.resumePdfPath}
               download
-              className="hero-button-gradient inline-flex shrink-0 rounded-lg px-6 py-3 font-medium text-white duration-300 ease-in hover:opacity-80"
+              className="hero-button-gradient inline-flex shrink-0 rounded-lg px-6 py-3 font-medium duration-300 ease-in"
             >
               Download Resume
             </a>
@@ -179,7 +179,7 @@ const ResumePage = () => {
               {competencies.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium"
+                  className="rounded-full border border-black/10 bg-black/5 px-4 py-1.5 text-sm font-medium"
                 >
                   {item}
                 </span>
@@ -204,7 +204,7 @@ const ResumePage = () => {
           <div className="wow fadeInUp mb-12">
             <SectionHeading>Professional Experience</SectionHeading>
             <div className="mb-4">
-              <h3 className="font-semibold text-white">United States Army</h3>
+              <h3 className="font-semibold text-ink">United States Army</h3>
               <p className="text-sm">
                 Military Police Investigator / Security Operations Supervisor
                 &middot; Fort Bliss, Texas
@@ -239,7 +239,7 @@ const ResumePage = () => {
             <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
               {technicalSkills.map((skill) => (
                 <div key={skill.label}>
-                  <p className="font-semibold text-white">{skill.label}</p>
+                  <p className="font-semibold text-ink">{skill.label}</p>
                   <p className="font-medium">{skill.value}</p>
                 </div>
               ))}
@@ -253,7 +253,7 @@ const ResumePage = () => {
               {certifications.map((item) => (
                 <span
                   key={item}
-                  className="rounded-full border border-white/10 bg-white/5 px-4 py-1.5 text-sm font-medium"
+                  className="rounded-full border border-black/10 bg-black/5 px-4 py-1.5 text-sm font-medium"
                 >
                   {item}
                 </span>
