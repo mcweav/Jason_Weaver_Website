@@ -1,7 +1,14 @@
 import SectionTitle from "@/components/Common/SectionTitle";
+import CardFanCarousel from "@/components/ui/card-fan-carousel";
 import projectsData from "./projectsData";
 
 const Projects = () => {
+  const cards = projectsData.map((project) => ({
+    imgUrl: project.imgUrl,
+    alt: project.title,
+    linkUrl: project.link,
+  }));
+
   return (
     <section
       id="projects"
@@ -11,44 +18,32 @@ const Projects = () => {
         <SectionTitle
           subTitle="My Work"
           title="Featured Projects"
-          paragraph="A few projects I've worked on. More details coming soon."
+          paragraph="A few projects I've worked on. More details coming soon — hover or tap a card to bring it forward."
         />
+      </div>
 
-        <div className="grid grid-cols-1 gap-7.5 sm:grid-cols-2 lg:grid-cols-3">
-          {projectsData.map((project) => (
-            <div
-              key={project.id}
-              className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6"
-            >
-              <div className="mb-5 flex aspect-16/10 items-center justify-center rounded-xl border border-dashed border-white/15 text-sm">
-                Project image
-              </div>
+      <CardFanCarousel cards={cards} />
 
-              <h3 className="mb-2 text-lg font-semibold text-white">
-                {project.title}
-              </h3>
-              <p className="mb-4 grow font-medium">{project.description}</p>
+      <div className="mx-auto mt-10 grid max-w-[1170px] grid-cols-1 gap-7.5 px-4 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:px-0">
+        {projectsData.map((project) => (
+          <div key={project.id}>
+            <h3 className="mb-2 text-lg font-semibold text-white">
+              {project.title}
+            </h3>
+            <p className="mb-4 font-medium">{project.description}</p>
 
-              <div className="mb-5 flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-
-              <a
-                href={project.link}
-                className="hero-subtitle-text text-sm font-medium hover:text-white"
-              >
-                View Project &rarr;
-              </a>
+            <div className="flex flex-wrap gap-2">
+              {project.tags.map((tag) => (
+                <span
+                  key={tag}
+                  className="rounded-full border border-white/10 px-3 py-1 text-xs font-medium"
+                >
+                  {tag}
+                </span>
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

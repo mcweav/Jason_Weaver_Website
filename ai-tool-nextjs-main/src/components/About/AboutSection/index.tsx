@@ -36,8 +36,13 @@ const AboutSection = () => {
             </a>
           </div>
 
-          <div className="wow fadeInRight relative hidden aspect-556/401 w-full xl:block">
-            <Image src="/images/about/about.svg" alt="about" fill />
+          <div className="wow fadeInRight relative mx-auto aspect-4/5 w-full max-w-[380px] overflow-hidden rounded-2xl border border-white/10 shadow-2xl xl:mx-0 xl:max-w-[420px]">
+            <Image
+              src="/images/hero/Photo-2.png"
+              alt="Jason D. Weaver"
+              fill
+              className="object-cover"
+            />
           </div>
         </div>
       </div>

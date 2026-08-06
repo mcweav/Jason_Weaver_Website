@@ -1,4 +1,5 @@
 import AboutSection from "@/components/About/AboutSection";
+import CodeSkills from "@/components/About/CodeSkills";
 import Skills from "@/components/About/Skills";
 import Breadcrumb from "@/components/Breadcrumb";
 import CallToAction from "@/components/CallToAction";
@@ -17,6 +18,7 @@ const AboutPage = () => {
       <Breadcrumb pageTitle="About Me" />
       <AboutSection />
       <Skills />
+      <CodeSkills />
       <CallToAction />
     </>
   );

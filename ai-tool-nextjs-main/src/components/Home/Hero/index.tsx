@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import ScrubVideo from "./ScrubVideo";
 
 const Hero = () => {
   return (
@@ -7,6 +8,12 @@ const Hero = () => {
       id='home'
       className='relative z-10 overflow-hidden pt-35 md:pt-40 xl:pt-45'
     >
+      {/* <!-- Hero Background Video (scrubs with mouse movement) --> */}
+      <div className='pointer-events-none absolute inset-0 -z-20'>
+        <ScrubVideo />
+        <div className='absolute inset-0 bg-gradient-to-b from-dark/70 via-dark/60 to-dark' />
+      </div>
+
       {/* <!-- Hero Bg Shapes --> */}
       <div className='mx-auto max-w-7xl'>
         <div className='pointer-events-none absolute inset-0 -z-10 -mx-28 overflow-hidden'>
@@ -27,6 +34,16 @@ const Hero = () => {
       {/* <!-- Hero Content --> */}
       <div className='relative z-1 mx-auto max-w-[900px] px-4 sm:px-8 xl:px-0'>
         <div className='text-center'>
+          <div className='relative mx-auto mb-7 h-32 w-32 overflow-hidden rounded-full ring-2 ring-purple/50 shadow-[0_0_40px_-8px_var(--color-purple)] sm:h-40 sm:w-40'>
+            <Image
+              src='/images/hero/Photo-1.png'
+              alt='Jason D. Weaver'
+              fill
+              priority
+              className='object-cover'
+            />
+          </div>
+
           <span className='hero-subtitle-gradient hover:hero-subtitle-hover relative mb-5 inline-flex items-center gap-2 rounded-full px-4.5 py-2 text-sm font-medium'>
             <Image
               src='/images/hero/icon-title.svg'
