@@ -38,12 +38,12 @@ const projectsData: Project[] = [
   },
   {
     id: 4,
-    title: "Project Four",
-    description: "Add a short description of this project here.",
-    tags: ["HTML5", "CSS3"],
-    link: "#",
-    imgUrl:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=500&h=875&fit=crop&q=80",
+    title: "Streamer Website",
+    description:
+      "A skeleton landing page template for streamers, with live-status hero, subscribe/donate/merch links, and a stream schedule section.",
+    tags: ["Web Design", "Template"],
+    link: "https://github.com/mcweav/streamer-website",
+    imgUrl: "/images/projects/streamer-website.png",
   },
   {
     id: 5,
