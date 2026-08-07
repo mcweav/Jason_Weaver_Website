@@ -29,12 +29,12 @@ const projectsData: Project[] = [
   },
   {
     id: 3,
-    title: "Project Three",
-    description: "Add a short description of this project here.",
-    tags: ["Python", "Security"],
-    link: "#",
-    imgUrl:
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=500&h=875&fit=crop&q=80",
+    title: "Furniture Website",
+    description:
+      "A services showcase for an outdoor living & furniture brand, covering shrubs and plants, walking pads, backyard coverings, and ambience lighting.",
+    tags: ["Web Design", "E-Commerce"],
+    link: "https://github.com/mcweav/furniture-website",
+    imgUrl: "/images/projects/furniture-website.png",
   },
   {
     id: 4,
