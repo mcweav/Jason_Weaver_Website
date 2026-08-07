@@ -11,21 +11,21 @@ export type Project = {
 const projectsData: Project[] = [
   {
     id: 1,
-    title: "Project One",
-    description: "Add a short description of this project here.",
-    tags: ["React", "Design"],
-    link: "#",
-    imgUrl:
-      "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=500&h=875&fit=crop&q=80",
+    title: "The Beans Place",
+    description:
+      "A farm-to-cup e-commerce site for a specialty coffee roaster, featuring single-origin beans and a warm, bold brand look.",
+    tags: ["E-Commerce", "UI/UX Design"],
+    link: "https://github.com/mcweav/The-Beans-Place-2026",
+    imgUrl: "/images/projects/beans-place.png",
   },
   {
     id: 2,
-    title: "Project Two",
-    description: "Add a short description of this project here.",
-    tags: ["JavaScript", "UX"],
-    link: "#",
-    imgUrl:
-      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=500&h=875&fit=crop&q=80",
+    title: "Barbershop Website",
+    description:
+      "A vintage-styled site for a local barbershop, with a services showcase and online appointment booking.",
+    tags: ["Web Design", "Booking Site"],
+    link: "https://github.com/mcweav/class_06",
+    imgUrl: "/images/projects/barbershop.png",
   },
   {
     id: 3,
