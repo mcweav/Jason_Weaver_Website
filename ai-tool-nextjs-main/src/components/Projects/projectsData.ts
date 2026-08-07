@@ -7,7 +7,6 @@ export type Project = {
   imgUrl: string;
 };
 
-// Placeholder projects — swap in your real work (and screenshots) whenever it's ready.
 const projectsData: Project[] = [
   {
     id: 1,
@@ -47,12 +46,12 @@ const projectsData: Project[] = [
   },
   {
     id: 5,
-    title: "Project Five",
-    description: "Add a short description of this project here.",
-    tags: ["JavaScript", "Automation"],
-    link: "#",
-    imgUrl:
-      "https://images.unsplash.com/photo-1550439062-609e1531270e?w=500&h=875&fit=crop&q=80",
+    title: "Flight Master",
+    description:
+      "A one-stop shop for flights — real-time flight tracking, airport commute planning, and ticket booking in one dashboard.",
+    tags: ["Web Design", "Dashboard"],
+    link: "https://github.com/mcweav/Flight-Master",
+    imgUrl: "/images/projects/flight-master.png",
   },
 ];
 
