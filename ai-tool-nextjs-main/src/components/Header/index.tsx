@@ -3,12 +3,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+import { useChatBot } from "../ChatBot/ChatBotContext";
 import DropDown from "./DropDown";
 import menuData from "./menuData";
 
 const Header = () => {
   const [navigationOpen, setNavigationOpen] = useState(false);
   const [stickyMenu, setStickyMenu] = useState(false);
+  const { isOpen: chatOpen, toggle: toggleChat } = useChatBot();
 
   const pathUrl = usePathname();
 
@@ -126,31 +128,32 @@ const Header = () => {
             </nav>
 
             <div className="mt-7 flex items-center gap-6 lg:mt-0">
-              <Link
-                href="/resume"
-                className="text-sm text-ink transition-colors duration-200 hover:text-gold"
-              >
-                View Resume
-              </Link>
-              <Link
-                href="/contact"
+              <button
+                type="button"
+                onClick={toggleChat}
+                aria-label={
+                  chatOpen ? "Close chat" : "Chat with Jason's AI assistant"
+                }
                 className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm"
               >
-                Get In Touch
+                {chatOpen ? "Close Chat" : "Chat with AI"}
                 <svg
                   className="mt-0.5"
                   width="16"
                   height="16"
-                  viewBox="0 0 16 16"
+                  viewBox="0 0 24 24"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
                 >
                   <path
-                    d="M14.4002 7.60002L9.2252 2.35002C9.0002 2.12502 8.6502 2.12502 8.4252 2.35002C8.2002 2.57502 8.2002 2.92502 8.4252 3.15002L12.6252 7.42502H2.0002C1.7002 7.42502 1.4502 7.67502 1.4502 7.97502C1.4502 8.27502 1.7002 8.55003 2.0002 8.55003H12.6752L8.4252 12.875C8.2002 13.1 8.2002 13.45 8.4252 13.675C8.5252 13.775 8.6752 13.825 8.8252 13.825C8.9752 13.825 9.1252 13.775 9.2252 13.65L14.4002 8.40002C14.6252 8.17502 14.6252 7.82503 14.4002 7.60002Z"
-                    fill="currentColor"
+                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
+                    stroke="currentColor"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
-              </Link>
+              </button>
             </div>
           </div>
         </div>

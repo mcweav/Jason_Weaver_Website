@@ -29,7 +29,7 @@ export default function ScrollToTop() {
   return (
     <button
       onClick={scrollToTop}
-      className='bg-ink hover:bg-gold fixed right-8 bottom-8 size-10 place-items-center rounded-sm text-white shadow-md transition-colors duration-300'
+      className='bg-gold hover:bg-[#c19a6b] fixed right-8 bottom-8 size-10 place-items-center rounded-sm text-white shadow-md transition-colors duration-300'
       style={{
         display: isVisible ? 'grid' : 'none',
       }}

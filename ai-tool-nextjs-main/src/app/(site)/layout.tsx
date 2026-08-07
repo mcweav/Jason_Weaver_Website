@@ -4,6 +4,7 @@ import '@/styles/star.css';
 import '@/styles/tailwind.css';
 
 import ChatBot from '@/components/ChatBot';
+import { ChatBotProvider } from '@/components/ChatBot/ChatBotContext';
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -30,25 +31,27 @@ export default function RootLayout({
   return (
     <html lang='en' className={plusJakarta.className}>
       <body>
-        <div className='isolate'>
-          <NextTopLoader
-            color='#06b6d4'
-            crawlSpeed={300}
-            showSpinner={false}
-            shadow='none'
-          />
+        <ChatBotProvider>
+          <div className='isolate'>
+            <NextTopLoader
+              color='#06b6d4'
+              crawlSpeed={300}
+              showSpinner={false}
+              shadow='none'
+            />
 
-          <AuthProvider>
-            <Header />
-            {children}
-            <Footer />
+            <AuthProvider>
+              <Header />
+              {children}
+              <Footer />
 
-            <ToasterContext />
-          </AuthProvider>
-        </div>
+              <ToasterContext />
+            </AuthProvider>
+          </div>
 
-        <ScrollToTop />
-        <ChatBot />
+          <ScrollToTop />
+          <ChatBot />
+        </ChatBotProvider>
       </body>
     </html>
   );

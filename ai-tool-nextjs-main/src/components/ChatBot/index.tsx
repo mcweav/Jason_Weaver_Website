@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { useChatBot } from "./ChatBotContext";
 
 type Message = {
   role: "user" | "assistant";
@@ -14,7 +15,7 @@ const INITIAL_MESSAGE: Message = {
 };
 
 const ChatBot = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const { isOpen, close } = useChatBot();
   const [messages, setMessages] = useState<Message[]>([INITIAL_MESSAGE]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
@@ -74,10 +75,11 @@ const ChatBot = () => {
     }
   };
 
+  if (!isOpen) return null;
+
   return (
-    <div className="fixed top-1/2 right-6 z-9999 flex -translate-y-1/2 flex-col items-end gap-3">
-      {isOpen && (
-        <div className="flex h-[480px] max-h-[70vh] w-[340px] max-w-[calc(100vw-3rem)] flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-[0_16px_48px_rgba(0,0,0,0.2)]">
+    <div className="fixed top-20 right-4 z-9999 sm:right-6 lg:top-24 lg:right-8">
+      <div className="flex h-[480px] max-h-[70vh] w-[340px] max-w-[calc(100vw-2rem)] flex-col overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-[0_16px_48px_rgba(0,0,0,0.2)]">
           <div className="flex items-center justify-between border-b border-ink/10 px-4.5 py-3.5">
             <div>
               <p className="text-sm font-semibold text-ink">
@@ -87,7 +89,7 @@ const ChatBot = () => {
             </div>
             <button
               type="button"
-              onClick={() => setIsOpen(false)}
+              onClick={close}
               aria-label="Close chat"
               className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-ink-2 transition-colors hover:bg-gold/10 hover:text-gold"
             >
@@ -163,36 +165,7 @@ const ChatBot = () => {
               </svg>
             </button>
           </div>
-        </div>
-      )}
-
-      <button
-        type="button"
-        onClick={() => setIsOpen((prev) => !prev)}
-        aria-label={isOpen ? "Close chat" : "Open chat with Jason's AI assistant"}
-        className="hero-button-gradient flex h-14 w-14 shrink-0 items-center justify-center rounded-full shadow-[0_12px_32px_rgba(0,0,0,0.25)] transition-transform duration-200 hover:scale-105"
-      >
-        {isOpen ? (
-          <svg viewBox="0 0 24 24" className="h-6 w-6" fill="none">
-            <path
-              d="M6 6l12 12M18 6L6 18"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-            />
-          </svg>
-        ) : (
-          <svg viewBox="0 0 24 24" className="h-6.5 w-6.5" fill="none">
-            <path
-              d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"
-              stroke="currentColor"
-              strokeWidth="1.8"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        )}
-      </button>
+      </div>
     </div>
   );
 };
