@@ -30,10 +30,10 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed left-0 top-0 z-1000 w-full ${
+        className={`fixed left-0 top-0 z-1000 w-full transition-all duration-500 ease-in-out ${
           stickyMenu
-            ? "border-b border-ink/8 bg-canvas/85 py-4! shadow-sm backdrop-blur-lg transition duration-100 lg:py-0!"
-            : "py-7 lg:py-0"
+            ? "border-b border-ink/8 bg-canvas/85 py-4! shadow-sm backdrop-blur-lg lg:py-0!"
+            : "border-b border-transparent bg-canvas/0 py-7 shadow-none backdrop-blur-none lg:py-0"
         }`}
       >
         <div className="relative mx-auto max-w-[1170px] items-center justify-between px-4 sm:px-8 lg:flex xl:px-0">
@@ -136,7 +136,7 @@ const Header = () => {
                 }
                 className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm"
               >
-                {chatOpen ? "Close Chat" : "Chat with AI"}
+                {chatOpen ? "Close Chat" : "Chat with my AI"}
                 <svg
                   className="mt-0.5"
                   width="16"
