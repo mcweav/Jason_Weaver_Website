@@ -200,13 +200,13 @@ const Footer = () => {
           <div className="relative z-1 flex flex-col items-start gap-3">
             <Link
               href="/resume"
-              className="text-sm font-semibold text-ink [text-shadow:0_1px_6px_rgba(0,0,0,0.55)] transition-colors duration-200 hover:text-gold"
+              className="text-sm font-semibold text-ink [text-shadow:0_1px_6px_rgba(0,0,0,0.55)] transition-colors duration-200 hover:text-[#7db6f2]"
             >
               View Resume
             </Link>
             <Link
               href="/contact"
-              className="button-border-gradient hover:button-gradient-hover relative flex items-center gap-1.5 rounded-lg px-4.5 py-2 text-sm"
+              className="relative -ml-4.5 flex items-center gap-1.5 rounded-lg border-[1.5px] border-[#3b7fd6] px-4.5 py-2 text-sm text-ink transition-colors duration-200 hover:border-[#3b7fd6] hover:bg-[#3b7fd6]"
             >
               Get In Touch
               <svg
