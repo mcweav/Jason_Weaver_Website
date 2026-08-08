@@ -9,7 +9,7 @@ const Projects = () => {
   const cards = projectsData.map((project) => ({
     imgUrl: project.imgUrl,
     alt: project.title,
-    linkUrl: project.link,
+    linkUrl: project.demoUrl || project.link,
   }));
 
   return (

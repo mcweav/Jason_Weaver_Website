@@ -5,6 +5,8 @@ export type Project = {
   tags: string[];
   link: string;
   imgUrl: string;
+  /** Local static build of the project — opened instead of `link` when present. */
+  demoUrl?: string;
 };
 
 const projectsData: Project[] = [
@@ -16,6 +18,7 @@ const projectsData: Project[] = [
     tags: ["E-Commerce", "UI/UX Design"],
     link: "https://github.com/mcweav/The-Beans-Place-2026",
     imgUrl: "/images/projects/beans-place.png",
+    demoUrl: "/projects/beans-place/index.html",
   },
   {
     id: 2,
@@ -25,6 +28,7 @@ const projectsData: Project[] = [
     tags: ["Web Design", "Booking Site"],
     link: "https://github.com/mcweav/class_06",
     imgUrl: "/images/projects/barbershop.png",
+    demoUrl: "/projects/barbershop/index.html",
   },
   {
     id: 3,
@@ -34,6 +38,7 @@ const projectsData: Project[] = [
     tags: ["Web Design", "E-Commerce"],
     link: "https://github.com/mcweav/furniture-website",
     imgUrl: "/images/projects/furniture-website.png",
+    demoUrl: "/projects/furniture/index.html",
   },
   {
     id: 4,
@@ -43,6 +48,7 @@ const projectsData: Project[] = [
     tags: ["Web Design", "Template"],
     link: "https://github.com/mcweav/streamer-website",
     imgUrl: "/images/projects/streamer-website.png",
+    demoUrl: "/projects/streamer/index.html",
   },
   {
     id: 5,

@@ -358,7 +358,7 @@ export default function CardFanCarousel({ cards }: CardFanCarouselProps) {
               <a
                 key={index}
                 href={card.linkUrl}
-                target={card.linkUrl.startsWith("http") ? "_blank" : "_self"}
+                target="_blank"
                 rel="noopener noreferrer"
                 className={`${cardClasses} block cursor-pointer`}
               >

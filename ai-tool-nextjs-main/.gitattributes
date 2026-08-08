@@ -1,0 +1,3 @@
+# Static project demo builds — opaque build output, never hand-edited.
+# Disable line-ending normalization so checkouts match the built bytes exactly.
+public/projects/** -text
