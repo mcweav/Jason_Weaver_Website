@@ -33,6 +33,7 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json("Your message has been sent!", { status: 200 });
   } catch (error) {
+    console.error("Failed to send contact form email:", error);
     return NextResponse.json(
       "Something went wrong. Please try again or email me directly.",
       { status: 500 },
