@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const SENSITIVITY = 0.8;
 export const VIDEO_SRC =
@@ -8,15 +8,31 @@ export const VIDEO_SRC =
 
 // Scrubs through the video based on horizontal mouse movement instead of
 // playing it — moving right/left seeks forward/backward through the clip.
+// Touch devices never fire mousemove, so they'd otherwise be stuck on a
+// blank first frame; those get a normal looping autoplay video instead.
 const ScrubVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const prevXRef = useRef<number | null>(null);
   const targetTimeRef = useRef(0);
   const seekingRef = useRef(false);
+  const [canScrub, setCanScrub] = useState(false);
+
+  useEffect(() => {
+    setCanScrub(
+      window.matchMedia("(hover: hover) and (pointer: fine)").matches,
+    );
+  }, []);
 
   useEffect(() => {
     const video = videoRef.current;
     if (!video) return;
+
+    if (!canScrub) {
+      video.play().catch(() => {});
+      return;
+    }
+
+    video.pause();
 
     const seekTo = (time: number) => {
       targetTimeRef.current = time;
@@ -57,7 +73,7 @@ const ScrubVideo = () => {
       video.removeEventListener("seeked", handleSeeked);
       window.removeEventListener("mousemove", handleMouseMove);
     };
-  }, []);
+  }, [canScrub]);
 
   return (
     <video
@@ -65,6 +81,7 @@ const ScrubVideo = () => {
       className="absolute inset-0 h-full w-full object-cover"
       src={VIDEO_SRC}
       muted
+      loop={!canScrub}
       playsInline
       preload="auto"
     />

@@ -74,7 +74,7 @@ const Footer = () => {
         />
       </div>
 
-      <div className="mx-auto grid max-w-[1150px] grid-cols-1 gap-4 px-4 sm:px-8 min-[860px]:grid-cols-[350px_1fr] xl:px-0">
+      <div className="mx-auto grid max-w-[1150px] grid-cols-1 gap-8 px-4 sm:px-8 min-[860px]:grid-cols-[350px_1fr] min-[860px]:gap-4 xl:px-0">
         {/* Left card: video + logo + tagline + socials */}
         <div className="relative flex min-h-[340px] flex-col justify-between overflow-hidden rounded-[28px] bg-ink p-8 shadow-[0_12px_40px_rgba(0,0,0,0.3)]">
           <video
@@ -139,8 +139,8 @@ const Footer = () => {
 
         {/* Right card: nav columns */}
         <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] p-8 sm:p-10">
-          {/* Floating badge */}
-          <div className="absolute -top-9 right-6 z-10 flex flex-col items-start gap-1.5 sm:right-10">
+          {/* Floating badge — stacks in-flow below the blue card until there's room (860px) to float it beside the nav content */}
+          <div className="relative top-0 right-0 z-10 mb-6 flex flex-col items-start gap-1.5 min-[860px]:absolute min-[860px]:-top-9 min-[860px]:right-10 min-[860px]:mb-0">
             <div
               className="flex h-18 w-18 -rotate-6 items-center justify-center rounded-[22px] sm:h-24 sm:w-24"
               style={{
@@ -225,7 +225,7 @@ const Footer = () => {
             </Link>
           </div>
 
-          <div className="flex justify-end gap-14 pt-2 pr-6 sm:gap-18 sm:pr-28">
+          <div className="flex justify-between gap-8 pt-2 min-[860px]:justify-end min-[860px]:gap-18 min-[860px]:pr-28">
             <div>
               <h4
                 className={`${caveat.variable} font-[family-name:var(--font-caveat)] mb-4.5 text-2xl font-semibold text-ink-2 italic [text-shadow:0_1px_6px_rgba(0,0,0,0.55)]`}

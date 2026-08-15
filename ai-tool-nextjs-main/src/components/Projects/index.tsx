@@ -38,9 +38,55 @@ const Projects = () => {
         />
       </div>
 
-      <CardFanCarousel cards={cards} />
+      {/* Fold-out fan carousel — desktop/tablet only; too cramped to be usable on a phone */}
+      <div className="hidden sm:block">
+        <CardFanCarousel cards={cards} />
+      </div>
 
-      <div className="mx-auto mt-10 grid max-w-[1170px] grid-cols-1 gap-7.5 px-4 sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:px-0">
+      {/* Mobile: each project as its own stacked card (image + details together) */}
+      <div className="mx-auto mt-8 flex max-w-[1170px] flex-col gap-6 px-4 sm:hidden">
+        {projectsData.map((project) => {
+          const href = project.demoUrl || project.link;
+          return (
+            <a
+              key={project.id}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block overflow-hidden rounded-2xl border border-ink/10 bg-surface shadow-lg"
+            >
+              <div className="relative aspect-4/3 w-full overflow-hidden">
+                <img
+                  src={project.imgUrl}
+                  alt={project.title}
+                  loading="lazy"
+                  className="absolute inset-0 h-full w-full object-cover"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="mb-2 text-lg font-semibold text-ink">
+                  {project.title}
+                </h3>
+                <p className="mb-4 font-medium">{project.description}</p>
+
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-ink/10 bg-ink/5 px-3 py-1 text-xs font-medium"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            </a>
+          );
+        })}
+      </div>
+
+      {/* Detail grid to accompany the fan carousel — desktop/tablet only, mobile gets the combined cards above */}
+      <div className="mx-auto mt-10 hidden max-w-[1170px] grid-cols-1 gap-7.5 px-4 sm:grid sm:grid-cols-2 sm:px-8 lg:grid-cols-3 xl:px-0">
         {projectsData.map((project) => (
           <div key={project.id}>
             <h3 className="mb-2 text-lg font-semibold text-ink">
