@@ -139,90 +139,93 @@ const Footer = () => {
 
         {/* Right card: nav columns */}
         <div className="relative flex flex-col justify-between overflow-visible rounded-[28px] p-8 sm:p-10">
-          {/* Floating badge — stacks in-flow below the blue card until there's room (860px) to float it beside the nav content */}
-          <div className="relative top-0 right-0 z-10 mb-6 flex flex-col items-start gap-1.5 min-[860px]:absolute min-[860px]:-top-9 min-[860px]:right-10 min-[860px]:mb-0">
-            <div
-              className="flex h-18 w-18 -rotate-6 items-center justify-center rounded-[22px] sm:h-24 sm:w-24"
-              style={{
-                background:
-                  "linear-gradient(135deg, #7db6f2 0%, #3b7fd6 55%, #1e4f9c 100%)",
-                boxShadow:
-                  "inset 3px 3px 8px rgba(255,255,255,0.35), inset -3px -3px 12px rgba(0,0,0,0.18), 8px 14px 28px rgba(30,79,156,0.35)",
-              }}
-            >
-              <span
-                className="rotate-6 text-[32px] leading-none font-bold tracking-[-0.04em] text-white sm:text-[42px]"
-                style={{ textShadow: "0 3px 6px rgba(0,0,0,0.25)" }}
+          {/* Below 860px: CTAs and badge sit side by side in a row so nothing stacks awkwardly down the left edge. At 860px+, this row dissolves (display:contents) and the badge reverts to floating absolutely over the corner like before. */}
+          <div className="mb-6 flex items-start justify-between gap-4 min-[860px]:contents">
+            {/* Resume / contact CTAs */}
+            <div className="relative z-1 flex flex-col items-start gap-3">
+              <Link
+                href="/resume"
+                className="text-sm font-semibold text-ink [text-shadow:0_1px_6px_rgba(0,0,0,0.55)] transition-colors duration-200 hover:text-[#7db6f2]"
               >
-                JW
-              </span>
+                View Resume
+              </Link>
+              <Link
+                href="/contact"
+                className="relative -ml-4.5 flex items-center gap-1.5 rounded-lg border-[1.5px] border-[#3b7fd6] px-4.5 py-2 text-sm text-ink transition-colors duration-200 hover:border-[#3b7fd6] hover:bg-[#3b7fd6]"
+              >
+                Get In Touch
+                <svg
+                  className="mt-0.5"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 16 16"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M14.4002 7.60002L9.2252 2.35002C9.0002 2.12502 8.6502 2.12502 8.4252 2.35002C8.2002 2.57502 8.2002 2.92502 8.4252 3.15002L12.6252 7.42502H2.0002C1.7002 7.42502 1.4502 7.67502 1.4502 7.97502C1.4502 8.27502 1.7002 8.55003 2.0002 8.55003H12.6752L8.4252 12.875C8.2002 13.1 8.2002 13.45 8.4252 13.675C8.5252 13.775 8.6752 13.825 8.8252 13.825C8.9752 13.825 9.1252 13.775 9.2252 13.65L14.4002 8.40002C14.6252 8.17502 14.6252 7.82503 14.4002 7.60002Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </Link>
             </div>
-            <div className="mt-1 flex -rotate-4 items-center gap-1.5">
-              <svg
-                viewBox="0 0 24 24"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-5 w-5 text-ink-2"
-              >
-                <path
-                  d="M3 20 C 6 14, 10 9, 18 5"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M18 5 L 12 5"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-                <path
-                  d="M18 5 L 18 11"
-                  stroke="currentColor"
-                  fill="none"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-              <span
-                className={`${caveat.variable} font-[family-name:var(--font-caveat)] whitespace-nowrap text-[20px] font-semibold text-ink-2`}
-              >
-                Let&apos;s talk!
-              </span>
-            </div>
-          </div>
 
-          {/* Resume / contact CTAs, stacked next to the left card */}
-          <div className="relative z-1 flex flex-col items-start gap-3">
-            <Link
-              href="/resume"
-              className="text-sm font-semibold text-ink [text-shadow:0_1px_6px_rgba(0,0,0,0.55)] transition-colors duration-200 hover:text-[#7db6f2]"
-            >
-              View Resume
-            </Link>
-            <Link
-              href="/contact"
-              className="relative -ml-4.5 flex items-center gap-1.5 rounded-lg border-[1.5px] border-[#3b7fd6] px-4.5 py-2 text-sm text-ink transition-colors duration-200 hover:border-[#3b7fd6] hover:bg-[#3b7fd6]"
-            >
-              Get In Touch
-              <svg
-                className="mt-0.5"
-                width="16"
-                height="16"
-                viewBox="0 0 16 16"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
+            {/* Floating badge */}
+            <div className="z-10 flex flex-col items-start gap-1.5 min-[860px]:absolute min-[860px]:-top-9 min-[860px]:right-10">
+              <div
+                className="flex h-18 w-18 -rotate-6 items-center justify-center rounded-[22px] sm:h-24 sm:w-24"
+                style={{
+                  background:
+                    "linear-gradient(135deg, #7db6f2 0%, #3b7fd6 55%, #1e4f9c 100%)",
+                  boxShadow:
+                    "inset 3px 3px 8px rgba(255,255,255,0.35), inset -3px -3px 12px rgba(0,0,0,0.18), 8px 14px 28px rgba(30,79,156,0.35)",
+                }}
               >
-                <path
-                  d="M14.4002 7.60002L9.2252 2.35002C9.0002 2.12502 8.6502 2.12502 8.4252 2.35002C8.2002 2.57502 8.2002 2.92502 8.4252 3.15002L12.6252 7.42502H2.0002C1.7002 7.42502 1.4502 7.67502 1.4502 7.97502C1.4502 8.27502 1.7002 8.55003 2.0002 8.55003H12.6752L8.4252 12.875C8.2002 13.1 8.2002 13.45 8.4252 13.675C8.5252 13.775 8.6752 13.825 8.8252 13.825C8.9752 13.825 9.1252 13.775 9.2252 13.65L14.4002 8.40002C14.6252 8.17502 14.6252 7.82503 14.4002 7.60002Z"
-                  fill="currentColor"
-                />
-              </svg>
-            </Link>
+                <span
+                  className="rotate-6 text-[32px] leading-none font-bold tracking-[-0.04em] text-white sm:text-[42px]"
+                  style={{ textShadow: "0 3px 6px rgba(0,0,0,0.25)" }}
+                >
+                  JW
+                </span>
+              </div>
+              <div className="mt-1 flex -rotate-4 items-center gap-1.5">
+                <svg
+                  viewBox="0 0 24 24"
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-5 w-5 text-ink-2"
+                >
+                  <path
+                    d="M3 20 C 6 14, 10 9, 18 5"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M18 5 L 12 5"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                  <path
+                    d="M18 5 L 18 11"
+                    stroke="currentColor"
+                    fill="none"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+                <span
+                  className={`${caveat.variable} font-[family-name:var(--font-caveat)] whitespace-nowrap text-[20px] font-semibold text-ink-2`}
+                >
+                  Let&apos;s talk!
+                </span>
+              </div>
+            </div>
           </div>
 
           <div className="flex justify-between gap-8 pt-2 min-[860px]:justify-end min-[860px]:gap-18 min-[860px]:pr-28">
