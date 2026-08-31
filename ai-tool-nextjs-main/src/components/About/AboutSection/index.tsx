@@ -3,7 +3,7 @@ import Image from "next/image";
 const stats = [
   { label: "8+ Years", detail: "Security & Risk Leadership" },
   { label: "185K+", detail: "Personnel & Assets Protected" },
-  { label: "React / Python", detail: "Front-End & Scripting" },
+  { label: "React / Python", detail: "Full-Stack Development" },
 ];
 
 const AboutSection = () => {
@@ -36,12 +36,12 @@ const AboutSection = () => {
             </span>
 
             <h2 className="mb-5 text-2xl font-extrabold text-ink sm:text-4xl xl:text-heading-2">
-              From Leading Security Operations to Designing Digital
-              Experiences
+              From Leading Security Operations to Building Full-Stack
+              Applications
             </h2>
             <p className="mb-8 font-medium">
-              I&apos;m a security operations leader turned UX &amp; front-end
-              designer. Over 8+ years in the U.S. Army, I led investigations,
+              I&apos;m a security operations leader turned full stack
+              developer. Over 8+ years in the U.S. Army, I led investigations,
               risk mitigation, and force protection efforts, and held an
               active DoD Secret Security Clearance while directing programs
               that protected 185,000+ personnel and government assets. Now

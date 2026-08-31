@@ -8,7 +8,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "About | Jason D. Weaver",
   description:
-    "Security operations leader turned UX & front-end designer, currently completing a B.S. in Information Technology.",
+    "Security operations leader turned full stack developer, currently completing a B.S. in Information Technology.",
   // other metadata
 };
 

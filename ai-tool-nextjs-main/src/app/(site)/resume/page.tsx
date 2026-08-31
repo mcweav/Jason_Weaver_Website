@@ -5,7 +5,7 @@ import { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Resume | Jason D. Weaver",
   description:
-    "Resume of Jason D. Weaver — Security Operations Leader turned UX & Front-End Designer.",
+    "Resume of Jason D. Weaver — Security Operations Leader turned Full Stack Developer.",
 };
 
 const highlights = [

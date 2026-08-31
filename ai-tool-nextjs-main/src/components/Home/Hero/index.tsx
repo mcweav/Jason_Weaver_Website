@@ -36,7 +36,7 @@ const Hero = () => {
             />
 
             <span className='hero-subtitle-text'>
-              UX &amp; Front-End Designer
+              Full Stack Developer
             </span>
           </span>
           <h1 className='xl:text-heading-1 mb-6 text-3xl font-extrabold text-ink sm:text-5xl'>
@@ -45,7 +45,7 @@ const Hero = () => {
 
           <p className='mx-auto mb-9 max-w-[560px] font-medium md:text-lg'>
             Making the hard problems feel effortless. I&apos;ve been
-            front-end coding and designing for two years, and I bring 8+
+            building full-stack applications for two years, and I bring 8+
             years of operational leadership and risk management experience
             to designing and building clean, dependable digital experiences.
           </p>

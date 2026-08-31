@@ -5,9 +5,9 @@ import Projects from "@/components/Projects";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Jason D. Weaver | UX & Front-End Designer",
+  title: "Jason D. Weaver | Full Stack Developer",
   description:
-    "Portfolio of Jason D. Weaver — UX & Front-End Designer and security operations leader.",
+    "Portfolio of Jason D. Weaver — Full Stack Developer and security operations leader.",
   // other metadata
 };
 
